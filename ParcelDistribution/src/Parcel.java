@@ -16,10 +16,9 @@ public class Parcel {
 
 	public Parcel(){
 		height = rand.nextInt(30) + 20;
-		length = rand.nextInt(30) + 20;  
+		length = rand.nextInt(30) + 20;
 		width = rand.nextInt(40) + 10;
 		color = rand.nextInt(3) + 1;
-		//color = 3;
 		x -= number * 200;
 		number++;
 	}
@@ -32,7 +31,7 @@ public class Parcel {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				 RenderingHints.VALUE_ANTIALIAS_ON);
-		
+
 		if (getColor() == 1) g2d.setColor(Color.green);
 		if (getColor() == 2) g2d.setColor(Color.blue);
 		if (getColor() == 3) g2d.setColor(Color.yellow);
@@ -50,7 +49,7 @@ public class Parcel {
 
 		g2d.fillPolygon(xPol1, yPol1, 4);
 		g2d.setColor(Color.BLACK);
-		g2d.drawPolygon(xPol1, yPol1, 4); 
+		g2d.drawPolygon(xPol1, yPol1, 4);
 
 		if (getColor() == 1) g2d.setColor(Color.green);
 		if (getColor() == 2) g2d.setColor(Color.blue);
@@ -82,7 +81,6 @@ public class Parcel {
 			if (c.getRunning()) xA = 1;
 			else xA = 0;
 		}
-		//System.out.println("SPACE");
 	}
 
 	public int getColor() {

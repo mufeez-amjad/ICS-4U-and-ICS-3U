@@ -6,9 +6,9 @@ public class WordEncrypter {
 	public static Scanner sc = new Scanner(System.in);
 	public static int shift;
 	private static int option;
-	private String newWord; 
+	private String newWord;
 
-	/*public static void main(String[] args){
+	public static void main(String[] args){
 
 		Object[] options = {"Encrypt a word",
 				"Decrypt a word",
@@ -21,8 +21,8 @@ public class WordEncrypter {
 					options,
 					options[2]);
 			if (option ==  JOptionPane.YES_OPTION || option == JOptionPane.NO_OPTION){
-				
-				
+
+
 				if (option == 0){
 					JOptionPane.showMessageDialog(null, "Your encoded word is: " + EncryptDecrypt(), "Top Secret Word Encrypter",
 							JOptionPane.QUESTION_MESSAGE);
@@ -73,25 +73,24 @@ public class WordEncrypter {
 
 		} while (!valid(key));
 
-		shift = 0; 
-	    for (int x = 0; x < key.length(); x++) 
+		shift = 0;
+	    for (int x = 0; x < key.length(); x++)
 	      shift += key.charAt(x) - 96; //uses ASCII values
 	    shift = shift % 26;
-		
+
 		char [] y = word.toCharArray(); // create a char array made of the characters in the string
-	    if (option == 0) // shifting n backwards is the same as shifting 26 - n forwards 
+	    if (option == 0) // shifting n backwards is the same as shifting 26 - n forwards
 	      shift = 26 - shift;
 	    for (int x = 0; x < y.length; x++) {//go through every element in char array, and increment it shift times
 	      for (int a = 0; a < shift; a++)
 	        if (y[x] == 'z') //if a character comes to z, place it to 'a' instead of to the next ASCII character; otherwise, increment it once
 	        y[x] = 'a';
-	      else 
+	      else
 	        y[x]++;
 	    }
 		newWord = new String(y);
 		return newWord;
 
 	}
-	*/
 
 }

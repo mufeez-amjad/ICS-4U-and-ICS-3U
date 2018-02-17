@@ -1,4 +1,4 @@
-//add different colors for scanner 
+//add different colors for scanner
 
 import java.awt.*;
 import java.awt.event.*;
@@ -10,7 +10,7 @@ public class DistributionCenter extends JPanel {
 	private Parcel[] parcels;
 	private Scanner scanner = new Scanner();
 	private Conveyor conveyor = new Conveyor(scanner);
-	
+
 	public DistributionCenter(int n){
 		parcels = new Parcel[n];
 		for (int i = 0; i < n; i++){
@@ -50,7 +50,7 @@ public class DistributionCenter extends JPanel {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				 RenderingHints.VALUE_ANTIALIAS_ON);
-		
+
 		g2d.setColor(Color.white);
 		g2d.fillRect(0, 0, frameWidth, frameHeight);
 		conveyor.paint(g, scanner);
@@ -59,7 +59,7 @@ public class DistributionCenter extends JPanel {
 			parcels[i].paint(g);
 		}
 
-		scanner.paint(g); 
+		scanner.paint(g);
 
 	}
 
@@ -74,37 +74,14 @@ public class DistributionCenter extends JPanel {
 	public static void main(String[] args) throws InterruptedException {
 		JFrame frame = new  JFrame();
 		DistributionCenter panel = new DistributionCenter(20);
-		/*panel.addKeyListener(new KeyListener() {
 
-			@Override
-			public void keyTyped(KeyEvent e) {}
-
-			@Override
-			public void keyReleased(KeyEvent e) {
-				if (e.getKeyCode() == KeyEvent.VK_SPACE){
-					conveyor.startStop();
-					for (int i = 0; i < parcels.length; i++){
-						parcels[i].stopStart(conveyor, scanner);
-					}
-				}
-			}
-
-			@Override
-			public void keyPressed(KeyEvent e) {
-
-			}
-		});
-
-		
-		panel.setFocusable(true);
-		*/
 		panel.requestFocusInWindow();
-		frame.add(panel); 
+		frame.add(panel);
 		frame.setSize(frameWidth, frameHeight);
 		frame.setVisible(true);
 		frame.setTitle("Canada Post");
-		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); 
-		//frame.setResizable(false); 
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		//frame.setResizable(false);
 		frame.setLocationRelativeTo(null); //centers the window
 
 		while (true){
